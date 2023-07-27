@@ -25,9 +25,12 @@ public class Menetlus : AggregateRoot
     
     public Menetlus(IMenetlusIdGenerator menetlusIdGenerator, Avaldaja avaldaja, string kusimus, string? markus)
     {
+        if (string.IsNullOrEmpty(kusimus))
+            throw new KusimusPuudubException();
+        
         Id = menetlusIdGenerator.GetNext();
         Avaldaja = avaldaja;
-        Kusimus = kusimus ?? throw new KusimusPuudubException();
+        Kusimus = kusimus;
         Markus = markus??"";
         Staatus = Staatus.Ootel;
         
