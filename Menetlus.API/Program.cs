@@ -1,4 +1,5 @@
 using System.Net;
+using System.Reflection;
 using Menetlus.API.Authentication;
 using Menetlus.API.Configuration;
 using Menetlus.API.Extensions;
@@ -9,6 +10,7 @@ using Menetlus.Repository.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +43,20 @@ builder.Services.AddScoped(serviceProvider => new MenetlusContext(connectionStri
 builder.Services.AddMenetlejaContext();
 builder.Services.AddAuthentication().AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("Basic", (o) => {});
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Description = "Menetluse loomine ja lugemine tehakse anonüümse kasutajaga. " +
+                      "Menetluse staatuste muutmiseks peab enneast autentima HTTP Basic Authenticationiga." +
+                      "Kasutajanimi läheb menetleja isikukoodiks ja prool asutuse tunnuseks." +
+                      "Menetleja andmete muutmiseks tuleb kõik browseri aknad sulgeda või avada uus aken inkognito aken."
+    });
+    
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
 
 var app = builder.Build();
 
