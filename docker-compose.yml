@@ -1,0 +1,89 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Menetlus.API/Dockerfile
+    ports:
+      - "5271:5271"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+  db:
+    image: postgres:15.3
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: menetlus_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d menetlus_db -U admin"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+  admin:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+  rabbitmq:
+    build:
+      context: ./rabbitmq
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:15672" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  outboxer:
+    build:
+      context: ./outboxer-postgres2rabbitmq
+      dockerfile: Dockerfile
+    environment:
+      OUTBOXER_DATABASE_HOSTNAME: db
+      OUTBOXER_DATABASE_PORT: 5432
+      OUTBOXER_DATABASE_USER: admin
+      OUTBOXER_DATABASE_PASSWORD: admin
+      OUTBOXER_DATABASE_DBNAME: menetlus_db
+      OUTBOXER_TABLE_INCLUDE_LIST: public.outbox
+      OUTBOXER_PUBLISHER_AMQP_URL: amqp://rabbitmq
+      OUTBOXER_PUBLISHER_AMQP_EXCHANGE: notifications
+      OUTBOXER_TRANSFORMS_OUTBOX_TABLE_FIELD_EVENT_ID: Id
+      OUTBOXER_TRANSFORMS_OUTBOX_TABLE_FIELD_EVENT_PAYLOAD: Payload
+    depends_on:
+      db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      xteeconnector:
+        condition: service_started
+  xteeconnector:
+    build:
+      context: .
+      dockerfile: ./Xtee.Connector/Dockerfile
+    restart: always
+    environment:
+      CONSOLE_ENVIRONMENT: Docker
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+  teavitus:
+    build:
+      context: .
+      dockerfile: ./TeavitusTeenus.Host/Dockerfile
+    restart: always
+    ports:
+      - "5273:5273"
