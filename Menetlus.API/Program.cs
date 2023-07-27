@@ -50,7 +50,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Description = "Menetluse loomine ja lugemine tehakse anonüümse kasutajaga. " +
                       "Menetluse staatuste muutmiseks peab enneast autentima HTTP Basic Authenticationiga." +
-                      "Kasutajanimi läheb menetleja isikukoodiks ja prool asutuse tunnuseks." +
+                      "Kasutajanimi läheb menetleja isikukoodiks ja parool asutuse tunnuseks." +
                       "Menetleja andmete muutmiseks tuleb kõik browseri aknad sulgeda või avada uus aken inkognito aken."
     });
     
