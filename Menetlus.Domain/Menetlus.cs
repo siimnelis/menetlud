@@ -13,7 +13,7 @@ public class Menetlus : AggregateRoot
     public Vastus Vastus { get; private set; }
     
     
-    private Menetlus(int id, Avaldaja avaldaja, string kusimus, string? markus, Staatus staatus, Vastus vastus)
+    internal Menetlus(int id, Avaldaja avaldaja, string kusimus, string? markus, Staatus staatus, Vastus vastus)
     {
         Id = id;
         Avaldaja = avaldaja;

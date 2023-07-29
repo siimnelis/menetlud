@@ -27,8 +27,14 @@ public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSc
         var value = Encoding.UTF8.GetString(Convert.FromBase64String(base64));
 
         var splitted = value.Split(":");
+
+        var isikukood = splitted[0];
+        var asutuseTunnus = splitted[1];
+
+        if (string.IsNullOrEmpty(isikukood) || string.IsNullOrEmpty(asutuseTunnus))
+            return Fail();
         
-        var userPrincipal = new MenetlejaPrincipal(new MenetlejaIdentity(splitted[0],splitted[1]));
+        var userPrincipal = new MenetlejaPrincipal(new MenetlejaIdentity(isikukood,asutuseTunnus));
         
         return Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(userPrincipal, "Basic")));
 

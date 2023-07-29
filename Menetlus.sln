@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeavitusTeenus.Host", "Teav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xtee.Connector", "Xtee.Connector\Xtee.Connector.csproj", "{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{71F01E1E-EC40-42BF-B81A-7515AC78ECAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menetlus.Domain.Tests", "Menetlus.Domain.Tests\Menetlus.Domain.Tests.csproj", "{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,5 +63,12 @@ Global
 		{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBC41E56-9B35-4C72-BFE3-D9D1254F1B79} = {71F01E1E-EC40-42BF-B81A-7515AC78ECAA}
 	EndGlobalSection
 EndGlobal
