@@ -2,7 +2,7 @@
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 
-namespace Xtee.Connector.XRoad;
+namespace Xtee.Teavitus.Connector.XRoad;
 
 public class XRoadEndpointBehaviour : IEndpointBehavior
 {

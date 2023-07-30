@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Xtee.Connector.TeavitusTeenus
+namespace Xtee.Teavitus.Connector.TeavitusTeenus
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://teavitus.x-road.ee", ConfigurationName="Xtee.Connector.TeavitusTeenus.ITeavitusTeenus")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://teavitus.x-road.ee", ConfigurationName="Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus")]
     public interface ITeavitusTeenus
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(XRoadIdentifierType))]
-        System.Threading.Tasks.Task<Xtee.Connector.TeavitusTeenus.TeavitaResponse1> TeavitaAsync(Xtee.Connector.TeavitusTeenus.TeavitaRequest request);
+        System.Threading.Tasks.Task<Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaResponse1> TeavitaAsync(Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaRequest request);
     }
     
     /// <remarks/>
@@ -679,10 +679,10 @@ namespace Xtee.Connector.TeavitusTeenus
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
-        public Xtee.Connector.TeavitusTeenus.XRoadClientIdentifierType client;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.XRoadClientIdentifierType client;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
-        public Xtee.Connector.TeavitusTeenus.XRoadServiceIdentifierType service;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.XRoadServiceIdentifierType service;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
         public string id;
@@ -697,13 +697,13 @@ namespace Xtee.Connector.TeavitusTeenus
         public string protocolVersion;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://teavitus.x-road.ee", Order=0)]
-        public Xtee.Connector.TeavitusTeenus.Teavita Teavita;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.Teavita Teavita;
         
         public TeavitaRequest()
         {
         }
         
-        public TeavitaRequest(Xtee.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Connector.TeavitusTeenus.Teavita Teavita)
+        public TeavitaRequest(Xtee.Teavitus.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Teavitus.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Teavitus.Connector.TeavitusTeenus.Teavita Teavita)
         {
             this.client = client;
             this.service = service;
@@ -723,10 +723,10 @@ namespace Xtee.Connector.TeavitusTeenus
     {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
-        public Xtee.Connector.TeavitusTeenus.XRoadClientIdentifierType client;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.XRoadClientIdentifierType client;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
-        public Xtee.Connector.TeavitusTeenus.XRoadServiceIdentifierType service;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.XRoadServiceIdentifierType service;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://x-road.eu/xsd/xroad.xsd")]
         public string id;
@@ -741,13 +741,13 @@ namespace Xtee.Connector.TeavitusTeenus
         public string protocolVersion;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://teavitus.x-road.ee", Order=0)]
-        public Xtee.Connector.TeavitusTeenus.TeavitaResponse TeavitaResponse;
+        public Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaResponse TeavitaResponse;
         
         public TeavitaResponse1()
         {
         }
         
-        public TeavitaResponse1(Xtee.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Connector.TeavitusTeenus.TeavitaResponse TeavitaResponse)
+        public TeavitaResponse1(Xtee.Teavitus.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Teavitus.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaResponse TeavitaResponse)
         {
             this.client = client;
             this.service = service;
@@ -760,13 +760,13 @@ namespace Xtee.Connector.TeavitusTeenus
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public interface ITeavitusTeenusChannel : Xtee.Connector.TeavitusTeenus.ITeavitusTeenus, System.ServiceModel.IClientChannel
+    public interface ITeavitusTeenusChannel : Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public partial class TeavitusTeenusClient : System.ServiceModel.ClientBase<Xtee.Connector.TeavitusTeenus.ITeavitusTeenus>, Xtee.Connector.TeavitusTeenus.ITeavitusTeenus
+    public partial class TeavitusTeenusClient : System.ServiceModel.ClientBase<Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus>, Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus
     {
         
         public TeavitusTeenusClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
@@ -775,14 +775,14 @@ namespace Xtee.Connector.TeavitusTeenus
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Xtee.Connector.TeavitusTeenus.TeavitaResponse1> Xtee.Connector.TeavitusTeenus.ITeavitusTeenus.TeavitaAsync(Xtee.Connector.TeavitusTeenus.TeavitaRequest request)
+        System.Threading.Tasks.Task<Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaResponse1> Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus.TeavitaAsync(Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaRequest request)
         {
             return base.Channel.TeavitaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Xtee.Connector.TeavitusTeenus.TeavitaResponse1> TeavitaAsync(Xtee.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Connector.TeavitusTeenus.Teavita Teavita)
+        public System.Threading.Tasks.Task<Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaResponse1> TeavitaAsync(Xtee.Teavitus.Connector.TeavitusTeenus.XRoadClientIdentifierType client, Xtee.Teavitus.Connector.TeavitusTeenus.XRoadServiceIdentifierType service, string id, string userId, string issue, string protocolVersion, Xtee.Teavitus.Connector.TeavitusTeenus.Teavita Teavita)
         {
-            Xtee.Connector.TeavitusTeenus.TeavitaRequest inValue = new Xtee.Connector.TeavitusTeenus.TeavitaRequest();
+            Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaRequest inValue = new Xtee.Teavitus.Connector.TeavitusTeenus.TeavitaRequest();
             inValue.client = client;
             inValue.service = service;
             inValue.id = id;
@@ -790,7 +790,7 @@ namespace Xtee.Connector.TeavitusTeenus
             inValue.issue = issue;
             inValue.protocolVersion = protocolVersion;
             inValue.Teavita = Teavita;
-            return ((Xtee.Connector.TeavitusTeenus.ITeavitusTeenus)(this)).TeavitaAsync(inValue);
+            return ((Xtee.Teavitus.Connector.TeavitusTeenus.ITeavitusTeenus)(this)).TeavitaAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

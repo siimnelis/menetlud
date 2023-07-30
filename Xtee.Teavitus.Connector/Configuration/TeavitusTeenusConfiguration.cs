@@ -1,4 +1,4 @@
-﻿namespace Xtee.Connector.Configuration;
+﻿namespace Xtee.Teavitus.Connector.Configuration;
 
 public class TeavitusTeenusConfiguration
 {

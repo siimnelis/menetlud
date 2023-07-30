@@ -3,10 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Xtee.Connector;
-using Xtee.Connector.Configuration;
-using Xtee.Connector.TeavitusTeenus;
-using Xtee.Connector.XRoad;
+using Xtee.Teavitus.Connector;
+using Xtee.Teavitus.Connector.Configuration;
+using Xtee.Teavitus.Connector.TeavitusTeenus;
+using Xtee.Teavitus.Connector.XRoad;
 
 var builder = Host.CreateApplicationBuilder(args);
 

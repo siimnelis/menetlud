@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel.Channels;
 using System.Xml;
 
-namespace Xtee.Connector.XRoad;
+namespace Xtee.Teavitus.Connector.XRoad;
 
 public class XRoadMessage : Message
 {

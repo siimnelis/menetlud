@@ -6,13 +6,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Polly;
-using Xtee.Connector.Configuration;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using Xtee.Connector.Extensions;
-using Xtee.Connector.TeavitusTeenus;
+using Xtee.Teavitus.Connector.Extensions;
+using Xtee.Teavitus.Connector.TeavitusTeenus;
+using Xtee.Teavitus.Connector.Configuration;
 
-namespace Xtee.Connector;
+namespace Xtee.Teavitus.Connector;
 
 public class XteeNotificationPublisher : IHostedService
 {

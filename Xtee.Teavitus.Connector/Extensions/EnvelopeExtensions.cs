@@ -1,8 +1,8 @@
 ﻿using Menetlus.External.Contracts;
 using Menetlus.External.Contracts.Events;
-using Xtee.Connector.TeavitusTeenus;
+using Xtee.Teavitus.Connector.TeavitusTeenus;
 
-namespace Xtee.Connector.Extensions;
+namespace Xtee.Teavitus.Connector.Extensions;
 
 public static class EnvelopeExtensions
 {
@@ -16,7 +16,7 @@ public static class EnvelopeExtensions
         return envelope.Menetleja?.Isikukood ?? "";
     }
     
-    public static Teavitus Map(this Envelope envelope, string id)
+    public static TeavitusTeenus.Teavitus Map(this Envelope envelope, string id)
     {
         if (envelope.Event is MenetlusLoodudEvent menetlusLoodudEvent)
         {

@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menetlus.External.Contracts
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menetlus.External.Contracts.Domain.Extensions", "Menetlus.External.Contracts.Domain.Extensions\Menetlus.External.Contracts.Domain.Extensions.csproj", "{64B8A900-C4FA-4DA0-93CD-4B0A5887772C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xtee.Connector", "Xtee.Connector\Xtee.Connector.csproj", "{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xtee.Teavitus.Connector", "Xtee.Teavitus.Connector\Xtee.Teavitus.Connector.csproj", "{6ACB205C-FE90-46D1-8AFD-B32D26B3B5B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{71F01E1E-EC40-42BF-B81A-7515AC78ECAA}"
 EndProject

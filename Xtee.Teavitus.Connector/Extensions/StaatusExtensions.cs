@@ -1,6 +1,6 @@
 ﻿using Staatus = Menetlus.External.Contracts.Models.Staatus;
 
-namespace Xtee.Connector.Extensions;
+namespace Xtee.Teavitus.Connector.Extensions;
 
 public static class StaatusExtensions
 {

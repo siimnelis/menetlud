@@ -1,6 +1,6 @@
 ﻿using Menetlus.External.Contracts.Models;
 
-namespace Xtee.Connector.Extensions;
+namespace Xtee.Teavitus.Connector.Extensions;
 
 public static class VastusExtensions
 {
