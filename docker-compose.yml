@@ -82,8 +82,8 @@ services:
         condition: service_healthy
   teavitus:
     build:
-      context: .
-      dockerfile: ./TeavitusTeenus.Host/Dockerfile
+      context: ./SpringTeavitusTeenus
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "5273:5273"
