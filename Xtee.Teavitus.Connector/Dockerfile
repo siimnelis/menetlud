@@ -3,16 +3,16 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Xtee.Connector/Xtee.Connector.csproj", "Xtee.Connector/"]
-RUN dotnet restore "Xtee.Connector/Xtee.Connector.csproj"
+COPY ["Xtee.Teavitus.Connector/Xtee.Teavitus.Connector.csproj", "Xtee.Teavitus.Connector/"]
+RUN dotnet restore "Xtee.Teavitus.Connector/Xtee.Teavitus.Connector.csproj"
 COPY . .
-WORKDIR "/src/Xtee.Connector"
-RUN dotnet build "Xtee.Connector.csproj" -c Release -o /app/build
+WORKDIR "/src/Xtee.Teavitus.Connector"
+RUN dotnet build "Xtee.Teavitus.Connector.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Xtee.Connector.csproj" -c Release -o /app/publish
+RUN dotnet publish "Xtee.Teavitus.Connector.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Xtee.Connector.dll"]
+ENTRYPOINT ["dotnet", "Xtee.Teavitus.Connector.dll"]

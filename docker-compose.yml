@@ -68,12 +68,12 @@ services:
         condition: service_healthy
       rabbitmq:
         condition: service_healthy
-      xteeconnector:
+      xtee.teavitus.connector:
         condition: service_started
-  xteeconnector:
+  xtee.teavitus.connector:
     build:
       context: .
-      dockerfile: ./Xtee.Connector/Dockerfile
+      dockerfile: ./Xtee.Teavitus.Connector/Dockerfile
     restart: always
     environment:
       CONSOLE_ENVIRONMENT: Docker
